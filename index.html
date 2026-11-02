@@ -1,0 +1,995 @@
+html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>OUSIA | Alexander Silveira - Técnico en Comunicación Visual & Diseño Gráfico Uruguay</title>
+    <meta name="title" content="OUSIA | Alexander Silveira - Técnico en Comunicación Visual & Diseño Gráfico Uruguay">
+    <meta name="description" content="Estudio de diseño gráfico y comunicación visual en Uruguay liderado por Alexander Silveira. Especialista en Branding, Rebranding, Identidad Visual, Logos y Diseño Editorial de alto impacto. Transformamos ideas en marcas memorables.">
+    <meta name="keywords" content="diseñador gráfico Uruguay, diseñador gráfico freelance Uruguay, branding Uruguay, identidad visual Uruguay, diseño de logos Uruguay, diseño editorial Uruguay, Alexander Silveira, OUSIA, OUSIA Design, estudio de diseño gráfico Uruguay">
+    <meta name="author" content="Alexander Silveira - OUSIA">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="Spanish">
+    <meta name="geo.region" content="UY">
+    <meta name="geo.placename" content="Uruguay">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ousia.design/">
+    <meta property="og:title" content="OUSIA | Alexander Silveira - Comunicación Visual & Branding">
+    <meta property="og:description" content="Estudio creativo de diseño gráfico e identidad visual en Uruguay. Creación de marcas con esencia, estrategia y propósito.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ousia.design/">
+    <meta property="twitter:title" content="OUSIA | Alexander Silveira - Comunicación Visual & Branding">
+    <meta property="twitter:description" content="Diseño gráfico estratégico, branding, rebranding y comunicación visual en Uruguay.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://ousia.design/#alexander",
+          "name": "Alexander Silveira",
+          "jobTitle": "Técnico en Comunicación Visual y Diseñador Gráfico",
+          "worksFor": {
+            "@id": "https://ousia.design/#organization"
+          },
+          "url": "https://ousia.design",
+          "sameAs": [
+            "https://instagram.com/alexandersilveiraq",
+            "https://instagram.com/ousia_design"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "UY"
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://ousia.design/#organization",
+          "name": "OUSIA Design Studio",
+          "founder": {
+            "@id": "https://ousia.design/#alexander"
+          },
+          "url": "https://ousia.design",
+          "logo": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&q=80",
+          "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&h=630&q=80",
+          "email": "ousiaousia@gmail.com",
+          "telephone": "+59892705850",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Uruguay"
+          },
+          "knowsAbout": ["Branding", "Graphic Design", "Visual Identity", "Editorial Design", "Rebranding"]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neonGreen: '#38FF00',
+                        neonPurple: '#9B00FF',
+                        darkBg: '#050508',
+                        darkCard: 'rgba(15, 15, 22, 0.75)',
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-green': '0 0 25px rgba(56, 255, 0, 0.4)',
+                        'neon-purple': '0 0 25px rgba(155, 0, 255, 0.4)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #050508;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        /* Wave Grid Dynamic Canvas */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism elements */
+        .glass-panel {
+            background: rgba(12, 12, 18, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(18, 18, 28, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(56, 255, 0, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px -10px rgba(155, 0, 255, 0.25);
+        }
+
+        /* Custom Gradients */
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 50%, #38FF00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #38FF00 0%, #ffffff 50%, #9B00FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-neon-primary {
+            background: linear-gradient(90deg, #38FF00 0%, #20be00 100%);
+            color: #000000;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-neon-primary:hover {
+            box-shadow: 0 0 25px rgba(56, 255, 0, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .btn-neon-purple {
+            background: linear-gradient(90deg, #9B00FF 0%, #7900c7 100%);
+            color: #ffffff;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-neon-purple:hover {
+            box-shadow: 0 0 25px rgba(155, 0, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050508;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f1f2e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38FF00;
+        }
+    </style>
+</head>
+<body class="selection:bg-neonGreen selection:text-black">
+
+    <!-- Background Wave Grid & Cosmos Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-black border border-neonGreen/40 flex items-center justify-center relative overflow-hidden group-hover:border-neonGreen transition-colors">
+                        <span class="font-heading text-xl font-bold text-neonGreen tracking-tighter">O</span>
+                        <div class="absolute inset-0 bg-neonGreen/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div>
+                        <span class="font-heading text-2xl font-extrabold tracking-wider text-white">OUSIA</span>
+                        <span class="block text-[10px] text-gray-400 font-mono tracking-widest uppercase -mt-1">Creative Studio</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#inicio" class="text-gray-300 hover:text-neonGreen transition-colors">Inicio</a>
+                    <a href="#sobre-mi" class="text-gray-300 hover:text-neonGreen transition-colors">Sobre Mí</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-neonGreen transition-colors">Portfolio</a>
+                    <a href="#proceso" class="text-gray-300 hover:text-neonGreen transition-colors">Proceso</a>
+                    <a href="#testimonios" class="text-gray-300 hover:text-neonGreen transition-colors">Testimonios</a>
+                    <a href="#contacto" class="px-5 py-2.5 rounded-full border border-neonGreen/50 text-neonGreen hover:bg-neonGreen hover:text-black font-semibold transition-all shadow-sm hover:shadow-neon-green">
+                        Contacto
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" aria-label="Abrir Menú" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-white/10 px-4 pt-2 pb-6 space-y-4">
+            <a href="#inicio" class="mobile-link block text-gray-200 hover:text-neonGreen text-lg font-medium py-2">Inicio</a>
+            <a href="#sobre-mi" class="mobile-link block text-gray-200 hover:text-neonGreen text-lg font-medium py-2">Sobre Mí</a>
+            <a href="#portfolio" class="mobile-link block text-gray-200 hover:text-neonGreen text-lg font-medium py-2">Portfolio</a>
+            <a href="#proceso" class="mobile-link block text-gray-200 hover:text-neonGreen text-lg font-medium py-2">Proceso</a>
+            <a href="#testimonios" class="mobile-link block text-gray-200 hover:text-neonGreen text-lg font-medium py-2">Testimonios</a>
+            <a href="#contacto" class="mobile-link block w-full text-center btn-neon-primary py-3 rounded-xl font-bold">Contactar por WhatsApp</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="inicio" class="min-h-[92vh] flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-20">
+            <div class="max-w-5xl mx-auto text-center space-y-8 relative z-10">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-neonGreen/30 text-neonGreen text-xs sm:text-sm font-mono uppercase tracking-widest animate-pulse">
+                    <span class="w-2 h-2 rounded-full bg-neonGreen"></span>
+                    <span>Técnico en Comunicación Visual & Diseñador Gráfico</span>
+                </div>
+
+                <!-- Main Hero Heading -->
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight text-white">
+                    Bienvenido a mi <br class="hidden sm:inline"/>
+                    <span class="text-gradient-purple uppercase">universo creativo</span>
+                </h1>
+
+                <!-- Manifesto Quote -->
+                <p class="text-lg sm:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
+                    “Aquí las ideas toman forma, las historias encuentran su voz y las marcas construyen su identidad.”
+                </p>
+
+                <!-- Sub-author tag -->
+                <div class="pt-2">
+                    <span class="text-xl sm:text-2xl font-heading font-semibold text-white tracking-wide">Alexander Silveira</span>
+                    <span class="text-neonGreen font-mono block text-sm mt-1">Fundador & Lead Designer en OUSIA • Uruguay</span>
+                </div>
+
+                <!-- Call to action buttons -->
+                <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                    <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl btn-neon-primary flex items-center justify-center gap-3 text-base shadow-lg">
+                        <span>Ver Proyectos</span>
+                        <i data-lucide="arrow-down-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://wa.me/59892705850?text=Hola%20Alexander,%20quiero%20trabajar%20contigo" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel border border-neonPurple/50 hover:border-neonPurple text-white hover:text-neonGreen flex items-center justify-center gap-3 text-base transition-all">
+                        <i data-lucide="message-circle" class="w-5 h-5 text-neonGreen"></i>
+                        <span>Contactar por WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Quick Stats / Highlights -->
+                <div class="pt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                    <div class="p-4 rounded-xl glass-card text-center">
+                        <span class="block text-3xl font-heading font-bold text-neonGreen">100%</span>
+                        <span class="text-xs text-gray-400 font-mono">ESTRATEGIA & PROPÓSITO</span>
+                    </div>
+                    <div class="p-4 rounded-xl glass-card text-center">
+                        <span class="block text-3xl font-heading font-bold text-white">5+</span>
+                        <span class="text-xs text-gray-400 font-mono">CATEGORÍAS DE DISEÑO</span>
+                    </div>
+                    <div class="p-4 rounded-xl glass-card text-center">
+                        <span class="block text-3xl font-heading font-bold text-neonPurple">UY</span>
+                        <span class="text-xs text-gray-400 font-mono">ALCANCE NACIONAL & INT.</span>
+                    </div>
+                    <div class="p-4 rounded-xl glass-card text-center">
+                        <span class="block text-3xl font-heading font-bold text-neonGreen">OUSIA</span>
+                        <span class="text-xs text-gray-400 font-mono">ESENCIA VISUAL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Mí Section -->
+        <section id="sobre-mi" class="py-24 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Profile Image & Aesthetic Box -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative w-full max-w-md mx-auto aspect-square rounded-2xl overflow-hidden glass-card p-2">
+                        <!-- Image Container -->
+                        <div class="w-full h-full rounded-xl overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Alexander Silveira - OUSIA Creative Director" 
+                                 class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
+                                 loading="lazy" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4 right-4 p-4 glass-panel rounded-lg border border-white/10">
+                                <p class="text-xs font-mono text-neonGreen">ALEXANDER SILVEIRA</p>
+                                <p class="text-sm font-semibold text-white">Técnico en Comunicación Visual & Diseño Gráfico</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative accents -->
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-neonPurple/20 rounded-full blur-2xl"></div>
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-neonGreen/20 rounded-full blur-2xl"></div>
+                </div>
+
+                <!-- Text Info -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-neonPurple/10 border border-neonPurple/30 text-neonPurple text-xs font-mono uppercase">
+                        <span>Filosofía & Visión</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                        La esencia detrás de <span class="text-neonGreen font-heading">OUSIA</span>
+                    </h2>
+
+                    <p class="text-gray-300 text-lg leading-relaxed font-light">
+                        El término griego <strong class="text-white font-semibold">OUSIA</strong> representa la sustancia primordial, la <em>esencia inmutable</em> de las cosas. Con esa misma premisa, desarrollo proyectos de diseño que van más allá de lo meramente estético: busco conectar marcas con su alma auténtica y con su público objetivo.
+                    </p>
+
+                    <p class="text-gray-300 text-lg leading-relaxed font-light">
+                        Como <strong class="text-white">Técnico en Comunicación Visual y Diseñador Gráfico en Uruguay</strong>, combino análisis estratégico, narrativa visual moderna y experimentación técnica para dar vida a proyectos de <strong>Branding, Rebranding, Diseño Editorial y Comunicación Visual de alto impacto</strong>.
+                    </p>
+
+                    <!-- Core Specialties Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl glass-panel border border-white/5 hover:border-neonGreen/30 transition-colors">
+                            <i data-lucide="compass" class="w-6 h-6 text-neonGreen mb-2"></i>
+                            <h3 class="font-bold text-white text-base">Estrategia Visual</h3>
+                            <p class="text-xs text-gray-400 mt-1">Investigación profunda y arquitectura de marca sólida.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass-panel border border-white/5 hover:border-neonPurple/30 transition-colors">
+                            <i data-lucide="layers" class="w-6 h-6 text-neonPurple mb-2"></i>
+                            <h3 class="font-bold text-white text-base">Identidad & Branding</h3>
+                            <p class="text-xs text-gray-400 mt-1">Sistemas visuales integrales y manuales normativos.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass-panel border border-white/5 hover:border-neonPurple/30 transition-colors">
+                            <i data-lucide="book-open" class="w-6 h-6 text-neonPurple mb-2"></i>
+                            <h3 class="font-bold text-white text-base">Diseño Editorial</h3>
+                            <p class="text-xs text-gray-400 mt-1">Diagramación, publicaciones, catálogos y piezas impresas.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass-panel border border-white/5 hover:border-neonGreen/30 transition-colors">
+                            <i data-lucide="zap" class="w-6 h-6 text-neonGreen mb-2"></i>
+                            <h3 class="font-bold text-white text-base">Innovación & Extras</h3>
+                            <p class="text-xs text-gray-400 mt-1">Tipografía, cartelería, señalética y redes sociales.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Portfolio Section with Category Filters -->
+        <section id="portfolio" class="py-24 bg-black/40 border-y border-white/5 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto space-y-12">
+                
+                <!-- Section Title -->
+                <div class="text-center space-y-4 max-w-3xl mx-auto">
+                    <span class="text-xs font-mono uppercase tracking-widest text-neonGreen">Trabajos Seleccionados</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Explora el Portfolio</h2>
+                    <p class="text-gray-400 text-base">Una muestra de proyectos desarrollados con estrategia, rigor estético y diseño de alto estándar visual.</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4" id="portfolio-filters">
+                    <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all border border-neonGreen bg-neonGreen text-black">
+                        Todos
+                    </button>
+                    <button data-filter="logos" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all border border-white/10 text-gray-300 hover:border-neonGreen hover:text-white">
+                        Logos
+                    </button>
+                    <button data-filter="branding" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all border border-white/10 text-gray-300 hover:border-neonGreen hover:text-white">
+                        Identidad Visual & Branding
+                    </button>
+                    <button data-filter="rebranding" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all border border-white/10 text-gray-300 hover:border-neonGreen hover:text-white">
+                        Rebranding
+                    </button>
+                    <button data-filter="editorial" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all border border-white/10 text-gray-300 hover:border-neonGreen hover:text-white">
+                        Editorial
+                    </button>
+                    <button data-filter="extras" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all border border-white/10 text-gray-300 hover:border-neonGreen hover:text-white">
+                        Extras
+                    </button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                    <!-- Project items dynamically inserted or statically structured below -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Proceso Creativo Section -->
+        <section id="proceso" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="space-y-16">
+                <!-- Header -->
+                <div class="text-center space-y-4 max-w-3xl mx-auto">
+                    <span class="text-xs font-mono uppercase tracking-widest text-neonPurple">Metodología de Trabajo</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Proceso Creativo</h2>
+                    <p class="text-gray-400 text-base">Un flujo claro y estructurado desde la idea abstracta hasta el entregable final de excelencia.</p>
+                </div>
+
+                <!-- Timeline Container -->
+                <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="glass-card p-6 rounded-2xl relative border-t-2 border-t-neonGreen">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-mono text-2xl font-bold text-neonGreen">01</span>
+                            <i data-lucide="search" class="w-6 h-6 text-gray-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Descubrimiento</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Briefing detallado, escucha activa de los objetivos del cliente y alineación de la visión del proyecto.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="glass-card p-6 rounded-2xl relative border-t-2 border-t-neonPurple">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-mono text-2xl font-bold text-neonPurple">02</span>
+                            <i data-lucide="cpu" class="w-6 h-6 text-gray-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Investigación</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Análisis de mercado, referencias visuales, benchmarks de competencia y benchmark estético global.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="glass-card p-6 rounded-2xl relative border-t-2 border-t-neonGreen">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-mono text-2xl font-bold text-neonGreen">03</span>
+                            <i data-lucide="target" class="w-6 h-6 text-gray-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Estrategia</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Definición del territorio de marca, concepto rector y los pilares gráficos sobre los que se construirá el diseño.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="glass-card p-6 rounded-2xl relative border-t-2 border-t-neonPurple">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-mono text-2xl font-bold text-neonPurple">04</span>
+                            <i data-lucide="pen-tool" class="w-6 h-6 text-gray-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Diseño</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Exploración tipográfica, creación del logotipo, paletas cromáticas y construcción del sistema gráfico.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="glass-card p-6 rounded-2xl relative border-t-2 border-t-neonGreen">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-mono text-2xl font-bold text-neonGreen">05</span>
+                            <i data-lucide="layers" class="w-6 h-6 text-gray-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Desarrollo</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Aplicación en mockups reales, manual de marca completo, pruebas de legibilidad y ajustes de precisión.</p>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="glass-card p-6 rounded-2xl relative border-t-2 border-t-neonPurple">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-mono text-2xl font-bold text-neonPurple">06</span>
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-gray-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Implementación</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Entrega final de archivos vectoriales listos para imprenta o entornos digitales, soporte y guía de uso.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios Section -->
+        <section id="testimonios" class="py-24 bg-black/40 border-t border-white/5 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto space-y-12">
+                <div class="text-center space-y-4 max-w-3xl mx-auto">
+                    <span class="text-xs font-mono uppercase tracking-widest text-neonGreen">Opiniones & Valoraciones</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Lo que dicen los clientes</h2>
+                    <p class="text-gray-400 text-base">La confianza de quienes han transformado sus marcas junto a OUSIA.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <div class="flex text-neonGreen gap-1">
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                            </div>
+                            <p class="text-gray-300 italic text-sm sm:text-base leading-relaxed">
+                                “Alexander entendió a la perfección la esencia de nuestra marca desde la primera reunión. El rebranding superó nuestras expectativas y nos posicionó en un nuevo nivel profesional.”
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                            <div class="w-10 h-10 rounded-full bg-neonPurple/30 border border-neonPurple flex items-center justify-center font-bold text-white text-sm">
+                                MP
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Mariana Pereyra</h4>
+                                <span class="text-xs text-gray-400">Directora Creativa - Montevideo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <div class="flex text-neonGreen gap-1">
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                            </div>
+                            <p class="text-gray-300 italic text-sm sm:text-base leading-relaxed">
+                                “El trabajo de diseño editorial y branding ejecutado por OUSIA tiene una sutileza y precisión que muy pocos diseñadores logran en Uruguay. Altamente recomendado.”
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                            <div class="w-10 h-10 rounded-full bg-neonGreen/30 border border-neonGreen flex items-center justify-center font-bold text-black text-sm">
+                                GS
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Gonzalo Silva</h4>
+                                <span class="text-xs text-gray-400">Fundador - TechStudio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <div class="flex text-neonGreen gap-1">
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-neonGreen"></i>
+                            </div>
+                            <p class="text-gray-300 italic text-sm sm:text-base leading-relaxed">
+                                “Destaco la responsabilidad, velocidad de respuesta y solidez estratégica de Alexander. Nos entregó un sistema visual versátil y extremadamente funcional.”
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                            <div class="w-10 h-10 rounded-full bg-white/20 border border-white/40 flex items-center justify-center font-bold text-white text-sm">
+                                CL
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Camila Larrosa</h4>
+                                <span class="text-xs text-gray-400">Gerente de Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA & Contacto Section -->
+        <section id="contacto" class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center relative">
+            <div class="glass-panel p-8 sm:p-14 rounded-3xl border border-neonGreen/30 shadow-2xl relative overflow-hidden space-y-8">
+                <!-- Background Glow -->
+                <div class="absolute -top-24 -right-24 w-72 h-72 bg-neonGreen/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-neonPurple/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="space-y-4 relative z-10">
+                    <span class="text-xs font-mono uppercase tracking-widest text-neonGreen">¿Listo para dar el siguiente paso?</span>
+                    <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        “¿Trabajamos juntos o le tienes miedo al éxito?”
+                    </h2>
+                    <p class="text-gray-300 text-base sm:text-xl max-w-2xl mx-auto font-light">
+                        Transformemos tu visión en una identidad visual memorable, estratégica y con propósito real.
+                    </p>
+                </div>
+
+                <!-- Main Direct WhatsApp Button -->
+                <div class="pt-4 relative z-10">
+                    <a href="https://wa.me/59892705850?text=Hola%20Alexander,%20quiero%20trabajar%20contigo" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center gap-4 px-10 py-5 rounded-2xl btn-neon-primary text-lg sm:text-xl font-bold uppercase tracking-wider group shadow-neon-green">
+                        <i data-lucide="message-square" class="w-7 h-7 group-hover:scale-110 transition-transform"></i>
+                        <span>Contactar por WhatsApp</span>
+                    </a>
+                    <span class="block text-xs text-gray-400 font-mono mt-3">+598 92 705 850 • Respuesta inmediata</span>
+                </div>
+
+                <!-- Social Media & Direct Contact Info Grid -->
+                <div class="pt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left border-t border-white/10 relative z-10">
+                    <!-- Email -->
+                    <a href="mailto:ousiaousia@gmail.com" class="p-4 rounded-xl glass-card flex items-center gap-4 group">
+                        <div class="p-3 rounded-lg bg-neonPurple/20 text-neonPurple group-hover:bg-neonPurple group-hover:text-white transition-colors">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-gray-400 font-mono">Correo Electrónico</span>
+                            <span class="text-sm font-semibold text-white group-hover:text-neonGreen transition-colors">ousiaousia@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <!-- Instagram Studio -->
+                    <a href="https://instagram.com/ousia_design" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl glass-card flex items-center gap-4 group">
+                        <div class="p-3 rounded-lg bg-neonGreen/20 text-neonGreen group-hover:bg-neonGreen group-hover:text-black transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-gray-400 font-mono">Instagram Estudio</span>
+                            <span class="text-sm font-semibold text-white group-hover:text-neonGreen transition-colors">@ousia_design</span>
+                        </div>
+                    </a>
+
+                    <!-- Instagram Personal -->
+                    <a href="https://instagram.com/alexandersilveiraq" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl glass-card flex items-center gap-4 group">
+                        <div class="p-3 rounded-lg bg-white/10 text-white group-hover:bg-white group-hover:text-black transition-colors">
+                            <i data-lucide="user" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-gray-400 font-mono">Instagram Personal</span>
+                            <span class="text-sm font-semibold text-white group-hover:text-neonGreen transition-colors">@alexandersilveiraq</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10 glass-panel">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                
+                <!-- Brand Info -->
+                <div class="space-y-1">
+                    <span class="font-heading text-2xl font-bold tracking-wider text-white">OUSIA</span>
+                    <p class="text-sm text-gray-400">Alexander Silveira • Técnico en Comunicación Visual & Diseño Gráfico</p>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-xs text-gray-500 font-mono">
+                    © <span id="current-year"></span> OUSIA Studio. Todos los derechos reservados. | Uruguay
+                </div>
+
+                <!-- Social Quick Links -->
+                <div class="flex items-center space-x-4">
+                    <a href="https://instagram.com/ousia_design" target="_blank" rel="noopener noreferrer" aria-label="Instagram Estudio" class="p-2 rounded-full glass-card text-gray-300 hover:text-neonGreen transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="mailto:ousiaousia@gmail.com" aria-label="Enviar Correo" class="p-2 rounded-full glass-card text-gray-300 hover:text-neonGreen transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://wa.me/59892705850" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Directo" class="p-2 rounded-full glass-card text-gray-300 hover:text-neonGreen transition-colors">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-panel border border-white/20 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative shadow-2xl">
+            <!-- Close Button -->
+            <button id="modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full glass-card">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Modal Content (Populated dynamically via JS) -->
+            <div id="modal-content" class="space-y-6">
+                <!-- Data goes here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Project Data Array
+        const projects = [
+            {
+                id: '1',
+                title: 'Aethelgard Identity',
+                category: 'branding',
+                categoryLabel: 'Identidad Visual & Branding',
+                image: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80',
+                description: 'Sistema de identidad visual completo para una marca premium de moda sostenible. Incluye manual de uso, aplicaciones papeleras y diseño de empaques.',
+                details: 'Se desarrolló una tipografía adaptada, patrones geométricos inspirados en estructuras arquitectónicas y paletas de color con acentos neón.'
+            },
+            {
+                id: '2',
+                title: 'Ousia Isotype Concept',
+                category: 'logos',
+                categoryLabel: 'Logos',
+                image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80',
+                description: 'Exploración tipográfica e isotipo minimalista basado en geometría sagrada y simetría fluida.',
+                details: 'Diseñado bajo vectores de alta precisión con construcciones áureas.'
+            },
+            {
+                id: '3',
+                title: 'Neo-Genesis Rebranding',
+                category: 'rebranding',
+                categoryLabel: 'Rebranding',
+                image: 'https://images.unsplash.com/photo-1542744094-3a31b272c490?auto=format&fit=crop&w=800&q=80',
+                description: 'Rediseño integral de marca corporativa (Antes / Después) para firma tecnológica uruguaya.',
+                details: 'Modificación del lenguaje gráfico tradicional hacia un entorno digital contemporáneo, optimizando contraste y presencia en pantallas OLED.'
+            },
+            {
+                id: '4',
+                title: 'Revista Arte & Cosmos',
+                category: 'editorial',
+                categoryLabel: 'Editorial',
+                image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80',
+                description: 'Diseño de maquetación y diagramación editorial para publicación cultural independiente de 120 páginas.',
+                details: 'Impresión en papeles de alto gramaje con acabados de laca UV sectorizada.'
+            },
+            {
+                id: '5',
+                title: 'Poster Series & Cartelería',
+                category: 'extras',
+                categoryLabel: 'Extras',
+                image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80',
+                description: 'Colección de piezas publicitarias, flyers para eventos de música electrónica y señalética conceptual.',
+                details: 'Uso de efectos visuales de distorsión digital, glitcheo tipográfico y composición experimental.'
+            },
+            {
+                id: '6',
+                title: 'Vanguardis Brand System',
+                category: 'branding',
+                categoryLabel: 'Identidad Visual & Branding',
+                image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80',
+                description: 'Mockups y aplicaciones integrales de marca corporativa para firma de arquitectura en Montevideo.',
+                details: 'Sistema de señalética interior, papelería ejecutiva y diseño de interfaz de usuario.'
+            }
+        ];
+
+        // Dynamic Current Year Setup
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Lucide Icons Initialization
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Render Function
+        const portfolioGrid = document.getElementById('portfolio-grid');
+
+        function renderPortfolio(items) {
+            portfolioGrid.innerHTML = '';
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl overflow-hidden cursor-pointer group';
+                card.onclick = () => openModal(item);
+                
+                card.innerHTML = `
+                    <div class="relative aspect-[4/3] overflow-hidden bg-black/50">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full glass-panel text-[10px] font-mono uppercase tracking-widest text-neonGreen border border-white/10">
+                            ${item.categoryLabel}
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-2">
+                        <h3 class="text-xl font-bold text-white group-hover:text-neonGreen transition-colors flex items-center justify-between">
+                            <span>${item.title}</span>
+                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-400 group-hover:text-neonGreen transition-colors"></i>
+                        </h3>
+                        <p class="text-xs text-gray-400 line-clamp-2">${item.description}</p>
+                    </div>
+                `;
+                portfolioGrid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        // Render Initial Portfolio
+        renderPortfolio(projects);
+
+        // Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-neonGreen', 'text-black', 'border-neonGreen');
+                    b.classList.add('border-white/10', 'text-gray-300');
+                });
+                btn.classList.add('bg-neonGreen', 'text-black', 'border-neonGreen');
+                btn.classList.remove('border-white/10', 'text-gray-300');
+
+                const filter = btn.getAttribute('data-filter');
+                if (filter === 'all') {
+                    renderPortfolio(projects);
+                } else {
+                    const filtered = projects.filter(p => p.category === filter);
+                    renderPortfolio(filtered);
+                }
+            });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalClose = document.getElementById('modal-close');
+
+        function openModal(item) {
+            modalContent.innerHTML = `
+                <div class="aspect-video w-full rounded-xl overflow-hidden bg-black">
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover" />
+                </div>
+                <div class="space-y-4">
+                    <span class="px-3 py-1 rounded-full glass-panel text-xs font-mono uppercase tracking-widest text-neonGreen border border-neonGreen/30">
+                        ${item.categoryLabel}
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white">${item.title}</h3>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">${item.description}</p>
+                    <div class="p-4 rounded-xl glass-panel border border-white/10">
+                        <h4 class="text-xs font-mono uppercase text-neonPurple mb-1">Detalles del Proyecto</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">${item.details}</p>
+                    </div>
+                    <div class="pt-4 flex justify-end">
+                        <a href="https://wa.me/59892705850?text=Hola%20Alexander,%20me%20interesa%20un%20proyecto%20similar%20a%20${encodeURIComponent(item.title)}" target="_blank" class="btn-neon-primary px-6 py-3 rounded-xl text-sm font-bold inline-flex items-center gap-2">
+                            <span>Consultar por este estilo</span>
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        modalClose.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+
+        // Wave Grid & Cosmos Canvas Animation
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        // Particle System
+        const particles = [];
+        const particleCount = 45;
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                radius: Math.random() * 2 + 0.5,
+                color: Math.random() > 0.5 ? '#38FF00' : '#9B00FF',
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                alpha: Math.random() * 0.6 + 0.2
+            });
+        }
+
+        let step = 0;
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw Subtle Gradient Background
+            const bgGrad = ctx.createRadialGradient(width / 2, height / 2, 100, width / 2, height / 2, Math.max(width, height));
+            bgGrad.addColorStop(0, '#0a0a12');
+            bgGrad.addColorStop(1, '#050508');
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, width, height);
+
+            // Draw Wave Grid Lines
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+            ctx.lineWidth = 1;
+
+            const gridSpacing = 60;
+            step += 0.015;
+
+            // Horizontal Wavy Lines
+            for (let y = 0; y < height; y += gridSpacing) {
+                ctx.beginPath();
+                for (let x = 0; x < width; x += 20) {
+                    const waveY = y + Math.sin(x * 0.005 + step + y * 0.01) * 12;
+                    if (x === 0) {
+                        ctx.moveTo(x, waveY);
+                    } else {
+                        ctx.lineTo(x, waveY);
+                    }
+                }
+                ctx.stroke();
+            }
+
+            // Vertical Lines
+            for (let x = 0; x < width; x += gridSpacing) {
+                ctx.beginPath();
+                for (let y = 0; y < height; y += 20) {
+                    const waveX = x + Math.cos(y * 0.005 + step + x * 0.01) * 12;
+                    if (y === 0) {
+                        ctx.moveTo(waveX, y);
+                    } else {
+                        ctx.lineTo(waveX, y);
+                    }
+                }
+                ctx.stroke();
+            }
+
+            // Draw Cosmic Ocean Particles
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0) p.x = width;
+                if (p.x > width) p.x = 0;
+                if (p.y < 0) p.y = height;
+                if (p.y > height) p.y = 0;
+
+                ctx.save();
+                ctx.globalAlpha = p.alpha;
+                ctx.fillStyle = p.color;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        window.onload = function() {
+            animate();
+        };
+    </script>
+</body>
+</html>
